@@ -1,0 +1,56 @@
+<div class="form">
+  <table style="text-align:center;">
+    <tr>
+      <td>
+      <td>Search : </td>
+      <td>
+        <input class="form-control" type="text" [value]="filterText" [placeholder]="filterPlaceholder"
+          [formControl]="filterInput" />
+
+      </td>
+
+      <td><label>   Select a book : </label></td>
+      <td>
+
+        <select [formControl]="SelectFilter">
+          <option></option>
+          <option *ngFor="let book of arrBooks " value="{{book.volumeInfo.title}}">
+            {{book.volumeInfo.title}}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="parent">
+
+  <ul *ngFor="let item of arrBooks  | filterAll: filterText | filterAll:filterSelect" (click)="openDialog(item)">
+    <li>
+      <fieldset>
+        <div class="div1">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title class="md-card-title">{{item.volumeInfo.title }}</mat-card-title>
+            </mat-card-header>
+
+
+            <img md-card-image src="{{item.volumeInfo.imageLinks.thumbnail}}">
+
+
+            <mat-card-content>
+              <div class="card-text-content">
+                by : {{item.volumeInfo.authors}} </div>
+            </mat-card-content>
+
+            <p> {{item.volumeInfo.description | slice:0:100}}...</p>
+
+
+          </mat-card>
+
+        </div>
+      </fieldset>
+
+    </li>
+  </ul>
+
+</div>
+<button (click)="back()">Back to the home Page </button>

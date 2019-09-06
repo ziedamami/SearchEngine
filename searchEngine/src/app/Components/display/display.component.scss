@@ -1,0 +1,23 @@
+.example-card {
+	max-width: 400px;
+  }
+  
+  .example-header-image {
+	background-size: cover;
+  }
+  .parent { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: 1fr; 
+    grid-column-gap: 50px;
+    grid-row-gap: 0px; 
+    .div1 { grid-area: 1 / 2 / 2 / 3; } 
+    }
+    button{
+      justify-content: center;
+      display: flex;
+      position:relative;
+      margin: 0 auto;
+    
+    
+    }

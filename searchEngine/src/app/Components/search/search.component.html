@@ -1,0 +1,40 @@
+
+      <div class="form">
+
+<form [formGroup]="firstFormGroup">
+       
+        <div class="container-fluid" >
+            <div>
+                
+                    <div class="card">
+                        <div class="card-header card-header-danger" id="text1">
+                            <h4 class="card-title" translate>Welcome to Our Online Library</h4>
+                            <p class="card-category" translate>please enter the title of a book</p>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-4" id="input1">
+                                    <input matInput placeholder="titre" type="text" formControlName="search" (keydown)="onClick($event)"required>
+                                    <div *ngIf="submitted && firstFormGroup.controls.search.errors" class="error">
+                                            <div *ngIf="firstFormGroup.controls.search.errors.required"translate>Title is required, bro</div>
+                                          </div>
+                                </div>
+
+                                
+                            </div>
+                        
+                    
+                </div>
+
+                
+            </div>
+
+
+
+
+
+
+        </div>
+        
+        
+      </form>
+      </div>
