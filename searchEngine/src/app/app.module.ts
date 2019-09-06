@@ -55,7 +55,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
   providers: [    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
-  entryComponents :[DisplayComponent,DialogComponent]
+  entryComponents :[DialogComponent]
 })
 export class AppModule { }
 

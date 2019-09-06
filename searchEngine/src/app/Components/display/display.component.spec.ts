@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DisplayComponent } from './display.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FilterPipe } from 'src/app/filter/filter.pipe';
+import { MatCardModule } from '@angular/material';
 
 describe('DisplayComponent', () => {
   let component: DisplayComponent;
@@ -8,7 +11,18 @@ describe('DisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayComponent ]
+      declarations: [ 
+        DisplayComponent,
+        FilterPipe,
+
+       ],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule,
+
+        
+    ],
     })
     .compileComponents();
   }));
